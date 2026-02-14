@@ -411,11 +411,11 @@
                 }
 
                 const result = await response.json();
-
+                console.log("SERVEVR RESPONSE:", result)
                 const studentData = {
-                name: formData.name,
-                id: result.studentId || "STD-2024-001", // من السيرفر أو قيمة افتراضية
-                qr: result.qr || "data:image/png;base64,..." // يمكن وضع QR افتراضي
+                name: result.student.name,
+                id: result.student.id,
+                qr: result.student.qr,
             };
 
             // حفظ في localStorage وفتح صفحة البطاقة
